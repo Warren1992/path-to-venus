@@ -1,3 +1,4 @@
+import venusTextureImage from "/src/assets/venus.jpg";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { Search, Menu, Compass, Crosshair, MapPin, Rocket, Info, ZoomIn, ZoomOut, RotateCcw, EyeOff, Play, Pause } from "lucide-react";
@@ -101,7 +102,8 @@ export default function PathToVenusWeek1Globe() {
       ctx.fillRect(x - r, y - r, r * 2, r * 2);
     }
 
-    const venusTexture = new THREE.CanvasTexture(canvas);
+    const textureLoader = new THREE.TextureLoader();
+    const venusTexture = textureLoader.load(venusTextureImage);
     venusTexture.colorSpace = THREE.SRGBColorSpace;
 
     const geometry = new THREE.SphereGeometry(1.55, 96, 96);
@@ -194,7 +196,7 @@ export default function PathToVenusWeek1Globe() {
       renderer.dispose();
       geometry.dispose();
       material.dispose();
-      venusTexture.dispose();
+      if (venusTexture) venusTexture.dispose();
       starGeometry.dispose();
     };
   }, [cinematic]);
