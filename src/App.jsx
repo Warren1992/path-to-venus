@@ -14,7 +14,7 @@ export default function PathToVenusWeek1Globe() {
   const animationRef = useRef(null);
   const [cinematic, setCinematic] = useState(true);
   const [uiHidden, setUiHidden] = useState(false);
-  const [zoom, setZoom] = useState(4.2);
+  const [zoom, setZoom] = useState(window.innerWidth < 768 ? 7.2 : 4.2);
   const [selected, setSelected] = useState({
     name: "Planned Rover Landing Site",
     type: "Mission Target",
@@ -265,24 +265,49 @@ export default function PathToVenusWeek1Globe() {
               <p className="mt-5 text-white/78 max-w-md text-lg">Move the planet with your fingers. Zoom in. Create cinematic Venus footage for the mission.</p>
             </div>
 
-            {locations.map((loc) => (
-              <button
-                key={loc.name}
-                onClick={() => setSelected({ name: loc.name, type: loc.type, description: loc.mission ? "Our target for the first Path to Venus rover mission." : `Explore ${loc.name}, a major Venus ${loc.type.toLowerCase()}.` })}
-                className={`absolute pointer-events-auto -translate-x-1/2 -translate-y-1/2 group ${loc.mission ? "z-30" : "z-20"}`}
-                style={{ left: loc.x, top: loc.y }}
-              >
-                <span className={`inline-flex items-center justify-center rounded-full ${loc.mission ? "w-12 h-12 bg-red-500 shadow-[0_0_35px_rgba(255,180,30,.9)]" : "w-3 h-3 bg-amber-200"} border-2 border-white/80`}>
-                  {loc.mission && <Rocket size={22} />}
-                </span>
-                <span className={`ml-2 align-middle rounded-lg bg-black/65 border ${loc.mission ? "border-amber-400/70 text-amber-300" : "border-white/15 text-white"} px-3 py-2 text-left text-sm font-semibold shadow-xl backdrop-blur-sm inline-block`}> 
-                  {loc.name}<br /><span className="font-normal text-white/75">{loc.type}</span>
-                </span>
-              </button>
-            ))}
+           {locations.map((loc) => (
+  <button
+    key={loc.name}
+    onClick={() =>
+      setSelected({
+        name: loc.name,
+        type: loc.type,
+        description: loc.mission
+          ? "Our target for the first Path to Venus rover mission."
+          : `Explore ${loc.name}, a major Venus ${loc.type.toLowerCase()}.`,
+      })
+    }
+    className={`absolute pointer-events-auto -translate-x-1/2 -translate-y-1/2 group ${
+      loc.mission ? "z-30" : "z-20"
+    }`}
+    style={{ left: loc.x, top: loc.y }}
+  >
+    <span
+      className={`inline-flex items-center justify-center rounded-full ${
+        loc.mission
+          ? "w-12 h-12 bg-red-500 shadow-[0_0_35px_rgba(255,180,30,.9)]"
+          : "w-3 h-3 bg-amber-200"
+      } border-2 border-white/80`}
+    >
+      {loc.mission && <Rocket size={22} />}
+    </span>
+
+    <span
+      className={`hidden md:inline-block ml-2 align-middle rounded-lg bg-black/65 border ${
+        loc.mission
+          ? "border-amber-400/70 text-amber-300"
+          : "border-white/15 text-white"
+      } px-3 py-2 text-left text-sm font-semibold shadow-xl backdrop-blur-sm`}
+    >
+      {loc.name}
+      <br />
+      <span className="font-normal text-white/75">{loc.type}</span>
+    </span>
+  </button>
+))}
           </main>
 
-          <section className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 w-[min(760px,calc(100%-2rem))] rounded-2xl bg-black/70 border border-white/15 backdrop-blur-lg p-4 md:p-5 shadow-2xl">
+          <section className="absolute bottom-0 md:bottom-24 left-1/2 -translate-x-1/2 z-30 w-[92%] md:w-[min(760px,calc(100%-2rem))] rounded-2xl bg-black/70 border border-white/15 backdrop-blur-lg p-4 md:p-5 shadow-2xl">
             <div className="flex gap-4 items-center">
               <div className="hidden sm:block w-40 h-24 rounded-xl bg-gradient-to-br from-amber-200 via-amber-700 to-black border border-white/10" />
               <div className="flex-1">
@@ -308,14 +333,14 @@ export default function PathToVenusWeek1Globe() {
 
       <button
         onClick={() => setUiHidden(!uiHidden)}
-        className="absolute left-5 bottom-24 z-40 rounded-full bg-black/70 border border-white/15 p-4 backdrop-blur-md text-white hover:bg-white/10"
+        className="hidden md:block absolute left-5 bottom-24 z-40 rounded-full bg-black/70 border border-white/15 p-4 backdrop-blur-md text-white hover:bg-white/10"
         title="Hide UI for cinematic recording"
       >
         <EyeOff size={22} />
       </button>
       <button
         onClick={resetView}
-        className="absolute left-20 bottom-24 z-40 rounded-full bg-black/70 border border-white/15 p-4 backdrop-blur-md text-white hover:bg-white/10"
+        className="hidden md:block absolute left-5 bottom-24 z-40 rounded-full bg-black/70 border border-white/15 p-4 backdrop-blur-md text-white hover:bg-white/10"
         title="Reset view"
       >
         <RotateCcw size={22} />

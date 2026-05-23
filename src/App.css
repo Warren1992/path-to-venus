@@ -182,3 +182,19 @@
     border-right-color: var(--border);
   }
 }
+@media (max-width: 768px) {
+  .info-card {
+    width: 90%;
+    bottom: 20px;
+    padding: 16px;
+  }
+
+  .control-buttons {
+    right: 10px;
+    gap: 10px;
+  }
+
+  .title-text {
+    font-size: 2rem;
+  }
+}
