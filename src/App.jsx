@@ -23,6 +23,7 @@ export default function PathToVenusWeek1Globe() {
 
   const locations = useMemo(
     () => [
+      { name: "Venera Prime", type: "Future Cloud City", x: "50%", y: "18%" },
       { name: "Maxwell Montes", type: "Mountain Range", x: "36%", y: "36%" },
       { name: "Maat Mons", type: "Shield Volcano", x: "31%", y: "64%" },
       { name: "Aphrodite Terra", type: "Highland Region", x: "62%", y: "52%" },
