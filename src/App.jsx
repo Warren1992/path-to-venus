@@ -1,3 +1,4 @@
+import VenusSurfaceSimulator from "./VenusSurfaceSimulator";
 import venusTextureImage from "/src/assets/venus.jpg";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -222,6 +223,7 @@ export default function PathToVenusWeek1Globe() {
       <div ref={mountRef} className="absolute inset-0" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_48%,transparent_20%,rgba(0,0,0,.15)_55%,rgba(0,0,0,.75)_100%)] pointer-events-none" />
 
+
       {!uiHidden && (
         <>
           <header className="absolute top-0 left-0 right-0 z-20 flex items-center justify-between p-5 md:p-7">
@@ -324,11 +326,15 @@ export default function PathToVenusWeek1Globe() {
 
           <footer className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between gap-2 border-t border-white/10 bg-black/65 backdrop-blur-md px-5 md:px-10 py-4">
             <div className="flex items-center gap-4 text-sm md:text-base">
-              <span className="text-amber-300 font-bold">VENUS STATS</span>
-              <span className="hidden sm:inline text-white/65">Radius 6,052 km</span>
-              <span className="hidden md:inline text-white/65">Day Length 243 Earth days</span>
-              <span className="hidden md:inline text-white/65">Surface Temp 462°C</span>
-            </div>
+  <a
+    href="https://a.co/d/0iig7G3u"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-amber-300 font-bold hover:text-amber-200 transition-colors"
+  >
+    📘 BUY THE PATH TO VENUS BOOK ON AMAZON
+  </a>
+</div>
             <div className="text-xs md:text-sm text-white/70">BUILDING THE FUTURE. ONE MISSION AT A TIME.</div>
           </footer>
         </>
