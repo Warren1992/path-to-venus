@@ -332,7 +332,7 @@ export default function PathToVenusWeek1Globe() {
     rel="noopener noreferrer"
     className="text-amber-300 font-bold hover:text-amber-200 transition-colors"
   >
-    📘 BUY THE PATH TO VENUS BOOK ON AMAZON
+    BUY THE PATH TO VENUS BOOK ON AMAZON
   </a>
 </div>
             <div className="text-xs md:text-sm text-white/70">BUILDING THE FUTURE. ONE MISSION AT A TIME.</div>
