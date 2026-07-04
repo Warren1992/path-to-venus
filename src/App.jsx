@@ -9,31 +9,31 @@ export default function PathToVenusWeek1Globe() {
     {
       label: "Buy the Book",
       subtitle: "Get your copy on Amazon",
-      href: "https://a.co/d/0iIg703u",
+      href: "https://a.co/d/02iaiqmu",
       icon: "📖",
     },
     {
       label: "Shop T-Shirts",
       subtitle: "Official Path to Venus merch",
-      href: "PASTE_YOUR_TSHIRT_LINK_HERE",
+      href: "https://path-to-venus.printify.me/",
       icon: "👕",
     },
     {
       label: "YouTube",
       subtitle: "Watch videos and deep dives",
-      href: "PASTE_YOUR_YOUTUBE_LINK_HERE",
+      href: "https://www.youtube.com/@pathtovenusmission",
       icon: "▶",
     },
     {
       label: "Instagram",
       subtitle: "Updates, visuals, and behind the scenes",
-      href: "PASTE_YOUR_INSTAGRAM_LINK_HERE",
+      href: "https://www.instagram.com/pathtovenus_/",
       icon: "◎",
     },
     {
       label: "TikTok",
       subtitle: "Shorts, clips, and Venus content",
-      href: "PASTE_YOUR_TIKTOK_LINK_HERE",
+      href: "https://www.tiktok.com/@path.to.venus",
       icon: "♪",
     },
   ];
