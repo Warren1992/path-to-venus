@@ -344,7 +344,7 @@ export default function PathToVenusWeek1Globe() {
 ))}
           </main>
 
-          <section className="hidden lg:block absolute bottom-0 lg:bottom-24 left-0 right-0 z-20 px-6 pointer-events-none">
+          <section className="hidden">
             <div className="flex gap-4 items-center">
               <div className="hidden sm:block w-40 h-24 rounded-xl bg-gradient-to-br from-amber-200 via-amber-700 to-black border border-white/10" />
               <div className="flex-1">
