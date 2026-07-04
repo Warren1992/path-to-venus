@@ -266,7 +266,7 @@ export default function PathToVenusWeek1Globe() {
                 <div className="text-[11px] text-amber-300 tracking-[0.2em]">EXPLORING VENUS. BUILDING THE FUTURE.</div>
               </div>
             </div>
-            <div className="hidden md:flex items-center gap-3 w-[420px] rounded-full bg-white/8 border border-white/15 px-5 py-3 backdrop-blur-md shadow-2xl">
+            <div className="hidden lg:flex items-center gap-3 w-[420px] rounded-full bg-white/8 border border-white/15 px-5 py-3 backdrop-blur-md shadow-2xl">
               <Search size={20} className="text-white/65" />
               <span className="text-white/55">Search Venus...</span>
             </div>
@@ -344,7 +344,7 @@ export default function PathToVenusWeek1Globe() {
 ))}
           </main>
 
-          <section className="hidden md:block absolute bottom-0 md:bottom-24 left-1/2 -translate-x-1/2 z-30 w-[92%] md:w-[min(760px,calc(100%-2rem))] rounded-2xl bg-black/70 border border-white/15 backdrop-blur-lg p-4 md:p-5 shadow-2xl">
+          <section className="hidden lg:block absolute bottom-0 lg:bottom-24 left-0 right-0 z-20 px-6 pointer-events-none">
             <div className="flex gap-4 items-center">
               <div className="hidden sm:block w-40 h-24 rounded-xl bg-gradient-to-br from-amber-200 via-amber-700 to-black border border-white/10" />
               <div className="flex-1">
@@ -360,7 +360,7 @@ export default function PathToVenusWeek1Globe() {
         <div className="mx-auto w-full max-w-md pointer-events-auto">
 
           {/* Mobile Link Hub */}
-          <div className="md:hidden rounded-[2rem] border border-amber-400/25 bg-black/70 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl">
+          <div className="lg:hidden rounded-[2rem] border border-amber-400/25 bg-black/70 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl">
             <div className="mb-4 text-center">
               <h1 className="text-3xl font-black tracking-[0.18em] text-white">
                 PATH TO <span className="text-amber-400">VENUS</span>
@@ -415,7 +415,7 @@ export default function PathToVenusWeek1Globe() {
           </div>
 
           {/* Desktop Footer */}
-          <div className="hidden md:flex items-center justify-center gap-8">
+          <div className="hidden lg:flex items-center justify-center gap-8">
             <a
               href="https://a.co/d/0iIg703u"
               target="_blank"
