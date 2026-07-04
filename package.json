@@ -39,5 +39,5 @@
     "vite": "^8.0.10"
   },
 "main": "electron.js",
-"homepage": "./"
+"homepage": "https://pathtovenus.com"
 }

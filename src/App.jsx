@@ -5,6 +5,38 @@ import * as THREE from "three";
 import { Search, Menu, Compass, Crosshair, MapPin, Rocket, Info, ZoomIn, ZoomOut, RotateCcw, EyeOff, Play, Pause } from "lucide-react";
 
 export default function PathToVenusWeek1Globe() {
+    const linkHubItems = [
+    {
+      label: "Buy the Book",
+      subtitle: "Get your copy on Amazon",
+      href: "https://a.co/d/0iIg703u",
+      icon: "📖",
+    },
+    {
+      label: "Shop T-Shirts",
+      subtitle: "Official Path to Venus merch",
+      href: "PASTE_YOUR_TSHIRT_LINK_HERE",
+      icon: "👕",
+    },
+    {
+      label: "YouTube",
+      subtitle: "Watch videos and deep dives",
+      href: "PASTE_YOUR_YOUTUBE_LINK_HERE",
+      icon: "▶",
+    },
+    {
+      label: "Instagram",
+      subtitle: "Updates, visuals, and behind the scenes",
+      href: "PASTE_YOUR_INSTAGRAM_LINK_HERE",
+      icon: "◎",
+    },
+    {
+      label: "TikTok",
+      subtitle: "Shorts, clips, and Venus content",
+      href: "PASTE_YOUR_TIKTOK_LINK_HERE",
+      icon: "♪",
+    },
+  ];
   const mountRef = useRef(null);
   const sphereRef = useRef(null);
   const rendererRef = useRef(null);
@@ -312,7 +344,7 @@ export default function PathToVenusWeek1Globe() {
 ))}
           </main>
 
-          <section className="absolute bottom-0 md:bottom-24 left-1/2 -translate-x-1/2 z-30 w-[92%] md:w-[min(760px,calc(100%-2rem))] rounded-2xl bg-black/70 border border-white/15 backdrop-blur-lg p-4 md:p-5 shadow-2xl">
+          <section className="hidden md:block absolute bottom-0 md:bottom-24 left-1/2 -translate-x-1/2 z-30 w-[92%] md:w-[min(760px,calc(100%-2rem))] rounded-2xl bg-black/70 border border-white/15 backdrop-blur-lg p-4 md:p-5 shadow-2xl">
             <div className="flex gap-4 items-center">
               <div className="hidden sm:block w-40 h-24 rounded-xl bg-gradient-to-br from-amber-200 via-amber-700 to-black border border-white/10" />
               <div className="flex-1">
@@ -324,19 +356,81 @@ export default function PathToVenusWeek1Globe() {
             </div>
           </section>
 
-          <footer className="absolute bottom-0 left-0 right-0 z-20 flex items-center justify-between gap-2 border-t border-white/10 bg-black/65 backdrop-blur-md px-5 md:px-10 py-4">
-            <div className="flex items-center gap-4 text-sm md:text-base">
-  <a
-    href="https://a.co/d/0iig7G3u"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-amber-300 font-bold hover:text-amber-200 transition-colors"
-  >
-    BUY THE PATH TO VENUS BOOK ON AMAZON
-  </a>
-</div>
-            <div className="text-xs md:text-sm text-white/70">BUILDING THE FUTURE. ONE MISSION AT A TIME.</div>
-          </footer>
+                <footer className="absolute bottom-0 left-0 right-0 z-30 px-4 pb-4 pointer-events-none">
+        <div className="mx-auto w-full max-w-md pointer-events-auto">
+
+          {/* Mobile Link Hub */}
+          <div className="md:hidden rounded-[2rem] border border-amber-400/25 bg-black/70 p-4 shadow-2xl shadow-amber-500/10 backdrop-blur-xl">
+            <div className="mb-4 text-center">
+              <h1 className="text-3xl font-black tracking-[0.18em] text-white">
+                PATH TO <span className="text-amber-400">VENUS</span>
+              </h1>
+
+              <p className="mt-2 text-xs font-medium tracking-[0.22em] text-amber-300/90">
+                EXPLORING VENUS. BUILDING THE FUTURE.
+              </p>
+            </div>
+
+            <div className="space-y-3">
+              {linkHubItems.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center gap-4 rounded-2xl border border-amber-400/35 bg-gradient-to-r from-black/80 to-amber-950/25 px-4 py-3 transition-all duration-300 hover:border-amber-300 hover:bg-amber-400/10 active:scale-[0.98]"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-amber-300/40 bg-black/60 text-2xl shadow-inner shadow-amber-500/10">
+                    {item.icon}
+                  </div>
+
+                  <div className="min-w-0 flex-1">
+                    <div className="text-lg font-bold text-white">
+                      {item.label}
+                    </div>
+
+                    <div className="truncate text-sm text-amber-200/80">
+                      {item.subtitle}
+                    </div>
+                  </div>
+
+                  <div className="text-3xl font-light text-amber-300 transition-transform duration-300 group-hover:translate-x-1">
+                    ›
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-5 text-center">
+              <p className="text-[10px] font-bold tracking-[0.28em] text-amber-300/70">
+                TOGETHER, WE CAN REACH FOR VENUS.
+              </p>
+
+              <div className="mx-auto mt-3 h-px w-32 bg-gradient-to-r from-transparent via-amber-400/70 to-transparent" />
+
+              <div className="mt-2 text-2xl font-black text-amber-400">
+                V
+              </div>
+            </div>
+          </div>
+
+          {/* Desktop Footer */}
+          <div className="hidden md:flex items-center justify-center gap-8">
+            <a
+              href="https://a.co/d/0iIg703u"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-300 font-bold hover:text-amber-200 transition-colors"
+            >
+              BUY THE PATH TO VENUS BOOK ON AMAZON
+            </a>
+
+            <div className="text-xs md:text-sm text-white/70">
+              BUILDING THE FUTURE ABOVE VENUS
+            </div>
+          </div>
+        </div>
+      </footer>
         </>
       )}
 
