@@ -47,14 +47,16 @@ a {
 }
 
 .planet-logo {
-  width: 42px;
-  height: 42px;
+  width: 64px;
+  height: 64px;
   display: inline-block;
+  flex-shrink: 0;
   border-radius: 50%;
-  background:
-    radial-gradient(circle at 30% 30%, #ffe1a0 0 8%, transparent 9%),
-    linear-gradient(145deg, #ffb343, #d95700 45%, #5b1900);
-  box-shadow: 0 0 18px rgba(255, 132, 0, 0.85);
+  background-image: url("public/assets/venus-icon.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 24px rgba(255, 132, 0, 0.85);
 }
 
 .nav {
