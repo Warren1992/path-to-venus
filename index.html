@@ -1,13 +1,195 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>path-to-venus</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Path to Venus</title>
+  <meta name="description" content="Building the vision for humanity's future in the clouds of Venus." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home">
+      <span class="planet-logo"></span>
+      <span>PATH TO <strong>VENUS</strong></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#home" class="active">Home</a>
+      <a href="#mission">Mission</a>
+      <a href="#concepts">Concepts</a>
+      <a href="#videos">Videos</a>
+      <a href="#book">Book</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a class="header-button" href="#join">Join the Journey</a>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">PATH TO</p>
+        <h1>VENUS</h1>
+        <p class="hero-subtitle">
+          Building the vision for humanity’s future<br />
+          in the clouds of Venus.
+        </p>
+
+        <div class="hero-buttons">
+          <a class="btn primary" href="#mission">▶ Watch the Mission</a>
+          <a class="btn secondary" href="#book">▣ Read the Book</a>
+          <a class="btn secondary" href="#join">☷ Join the Journey</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="section-title">
+        <span></span>
+        <h2>WHY VENUS?</h2>
+        <span></span>
+      </div>
+
+      <div class="why-grid">
+        <article class="why-card">
+          <div class="card-icon">◉</div>
+          <div>
+            <h3>EARTH-LIKE GRAVITY</h3>
+            <p>At Venus, gravity is about 90% of Earth’s — close enough for long-term human comfort.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="card-icon">☀</div>
+          <div>
+            <h3>ABUNDANT SOLAR ENERGY</h3>
+            <p>Closer to the Sun, Venus receives far more sunlight than Earth — powering the future.</p>
+          </div>
+        </article>
+
+        <article class="why-card">
+          <div class="card-icon">⌂</div>
+          <div>
+            <h3>BREATHABLE AIR INSIDE</h3>
+            <p>At cloud level, ordinary breathable air could also act as a lifting gas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="concepts" class="section">
+      <div class="section-title">
+        <span></span>
+        <h2>WHAT COULD LIFE LOOK LIKE?</h2>
+        <span></span>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card" style="background-image: url('assets/floating-habitats.jpg');">
+          <p>Floating Habitats</p>
+        </article>
+
+        <article class="concept-card" style="background-image: url('assets/lush-interiors.jpg');">
+          <p>Lush Interiors</p>
+        </article>
+
+        <article class="concept-card" style="background-image: url('assets/skyline-living.jpg');">
+          <p>Skyline Living</p>
+        </article>
+
+        <article class="concept-card" style="background-image: url('assets/palace-to-thrive.jpg');">
+          <p>A Place to Thrive</p>
+        </article>
+
+        <article class="concept-card" style="background-image: url('assets/connected-communities.jpg');">
+          <p>Connected Communities</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="mission" class="section mission">
+      <div class="section-title">
+        <span></span>
+        <h2>THE MISSION</h2>
+        <span></span>
+      </div>
+
+      <p class="mission-text">
+        Path to Venus is dedicated to exploring, envisioning, and building the future of humanity in the clouds of Venus.
+      </p>
+
+      <div class="mission-grid">
+        <article>
+          <div class="mission-icon">▷</div>
+          <h3>VIDEOS</h3>
+          <p>High-quality content that explores the science, engineering, and possibilities of Venus.</p>
+        </article>
+
+        <article>
+          <div class="mission-icon">▣</div>
+          <h3>BOOKS</h3>
+          <p>In-depth stories and guides that bring the vision to life on the page.</p>
+        </article>
+
+        <article>
+          <div class="mission-icon">◌</div>
+          <h3>EXPLORATION CONCEPTS</h3>
+          <p>Original ideas and designs for floating cities, habitats, and life in the clouds.</p>
+        </article>
+
+        <article>
+          <div class="mission-icon">⌁</div>
+          <h3>SUPPORT THE FUTURE</h3>
+          <p>Every view, read, and share helps fuel real-world steps toward Venus exploration.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="join" class="support-section">
+      <div class="section-title">
+        <span></span>
+        <h2>SUPPORT THE JOURNEY</h2>
+        <span></span>
+      </div>
+
+      <div class="support-grid">
+        <article id="book" class="support-card book-card">
+          <img src="assets/book-cover.png" alt="Path to Venus book cover" />
+          <div>
+            <h3>READ THE BOOK</h3>
+            <p>Dive deeper into the vision for life above the clouds.</p>
+            <a class="small-btn" href="PASTE_YOUR_AMAZON_BOOK_LINK_HERE">Learn More</a>
+          </div>
+        </article>
+
+        <article id="videos" class="support-card">
+          <div class="youtube-icon">▶</div>
+          <div>
+            <h3>WATCH ON YOUTUBE</h3>
+            <p>Subscribe for new videos about Venus, technology, and the future.</p>
+            <a class="small-btn" href="PASTE_YOUR_YOUTUBE_LINK_HERE">Visit Channel</a>
+          </div>
+        </article>
+
+        <article class="support-card">
+          <div class="community-icon">●●●</div>
+          <div>
+            <h3>JOIN THE MOVEMENT</h3>
+            <p>Be part of a global community building humanity’s future.</p>
+            <a class="small-btn" href="PASTE_YOUR_TIKTOK_OR_INSTAGRAM_LINK_HERE">Join the Journey</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact" class="footer">
+    <p>© 2026 Path to Venus. Building the vision for humanity’s future in the clouds.</p>
+  </footer>
+</body>
 </html>
