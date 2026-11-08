@@ -6,6 +6,14 @@
 
 html {
   scroll-behavior: smooth;
+  /* Position linked sections below the sticky header on desktop. */
+  scroll-padding-top: 84px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -381,7 +389,14 @@ a {
 }
 
 @media (max-width: 1050px) {
+  html {
+    scroll-padding-top: 16px;
+  }
+
   .site-header {
+    /* Multi-row mobile navigation would otherwise cover the section's title. */
+    position: relative;
+    top: auto;
     height: auto;
     padding: 18px;
     flex-wrap: wrap;

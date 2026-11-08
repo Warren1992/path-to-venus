@@ -17,7 +17,7 @@
     </a>
 
     <nav class="nav">
-      <a href="#home" class="active">Home</a>
+      <a href="#home">Home</a>
       <a href="#mission">Mission</a>
       <a href="#concepts">Concepts</a>
       <a href="#videos">Videos</a>
@@ -153,6 +153,18 @@
       </div>
     </section>
 
+    <section id="about" class="section">
+      <div class="section-title">
+        <span></span>
+        <h2>ABOUT PATH TO VENUS</h2>
+        <span></span>
+      </div>
+      <p class="mission-text">
+        Path to Venus shares original videos, books, and exploration concepts about Venus,
+        robotic missions, and the possibility of future human habitats in its atmosphere.
+      </p>
+    </section>
+
     <section id="join" class="support-section">
       <div class="section-title">
         <span></span>
@@ -194,5 +206,28 @@
   <footer id="contact" class="footer">
     <p>© 2026 Path to Venus. Building the vision for humanity’s future in the clouds.</p>
   </footer>
+
+  <script>
+    // Keep the highlighted navigation item in sync with the selected section.
+    // Native hash links handle scrolling and browser back/forward navigation.
+    (() => {
+      const links = [...document.querySelectorAll('.nav a[href^="#"]')];
+      const updateActiveLink = () => {
+        const currentHash = window.location.hash || '#home';
+        links.forEach((link) => {
+          const isActive = link.getAttribute('href') === currentHash;
+          link.classList.toggle('active', isActive);
+          if (isActive) {
+            link.setAttribute('aria-current', 'location');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      };
+
+      window.addEventListener('hashchange', updateActiveLink);
+      updateActiveLink();
+    })();
+  </script>
 </body>
 </html>
