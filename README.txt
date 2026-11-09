@@ -1,26 +1,39 @@
-PATH TO VENUS - MOBILE SECTION NAVIGATION FIX
+PATH TO VENUS — STORE + CONTACT UPDATE
+====================================
 
-The two files in this folder are replacement versions of the existing
-root-level files in the Warren1992/path-to-venus GitHub repository.
+WHAT IS INCLUDED
+  index.html       Updated homepage navigation, Store link and merch promo
+  styles.css       Existing site theme plus responsive Store and Contact styling
+  store.html       Store landing page linking to your existing Printify shop
+  contact.html     Contact form posting to FormSubmit
+  thank-you.html   Confirmation page after a successful submission
 
-CHANGES
-* The large mobile header now scrolls out of the way, instead of hiding
-  the section when someone taps a navigation link.
-* Desktop anchors account for the 72px sticky header.
-* Added an actual "About Path to Venus" section for the About link.
-* Active navigation highlighting reflects the selected section, instead
-  of keeping Home highlighted at the same time.
-* Preserved existing site content, design, links, images, and layout.
+HOW TO INSTALL
+1. Open https://github.com/Warren1992/path-to-venus
+2. Select the MAIN branch and open the repository's root directory (not public/ or src/).
+3. Choose Add file > Upload files (on mobile, requesting Desktop site may help).
+4. Upload ALL FIVE files, replacing the existing index.html and styles.css.
+5. Commit the changes to main. Keep existing folders and other files unchanged.
+6. When GitHub Pages finishes publishing, refresh https://pathtovenus.com/.
+7. Open https://pathtovenus.com/store.html and https://pathtovenus.com/contact.html.
 
-INSTALL
-1. Extract this ZIP.
-2. Replace index.html and styles.css in the ROOT of your local
-   path-to-venus GitHub repository (NOT the src folder).
-3. Commit and push the two file changes to the main branch.
-4. Visit https://pathtovenus.com/ and refresh after GitHub Pages redeploys.
-5. Test the Home, Mission, Concepts, Videos, Book, About, and Contact links.
+CONTACT FORM — IMPORTANT ACTIVATION
+- The contact form is configured for your previously designated PUBLIC business address:
+  contact@pathtovenus.com
+- It uses https://formsubmit.co/ to deliver form submissions. This service requires
+  the recipient email address to be verified. Send a TEST inquiry from the deployed
+  contact page and open the FormSubmit activation email forwarded to your inbox.
+  Click its activation link; then send a second test message and confirm receipt.
+- Until verified, do not assume submissions are being delivered.
+- If you change your public contact inbox, update the form action and contact links
+  in contact.html and re-verify with FormSubmit.
+- Email forwarding for contact@pathtovenus.com needs to be functioning.
+- Never paste personal credit-card details or account secrets into this form.
 
-NOTE
-The connected GitHub tool returned HTTP 403 when attempting to commit
-these fixes. They have NOT been deployed automatically. The files in this
-package are ready for you to commit from your own GitHub account.
+STORE
+- Store and merchandise links point to your existing Printify storefront:
+  https://path-to-venus.printify.me/
+- Checkout, payments, shipping, product variants and pricing remain on Printify.
+- No product prices or photos were fabricated; the shop controls what is in stock.
+
+NO CHANGES to Nimbivale, your book link, original content, or other site assets.
