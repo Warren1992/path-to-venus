@@ -1,39 +1,46 @@
-PATH TO VENUS — STORE + CONTACT UPDATE
-====================================
+PATH TO VENUS — VENUS JOURNAL / BLOG UPDATE
+============================================
 
 WHAT IS INCLUDED
-  index.html       Updated homepage navigation, Store link and merch promo
-  styles.css       Existing site theme plus responsive Store and Contact styling
-  store.html       Store landing page linking to your existing Printify shop
-  contact.html     Contact form posting to FormSubmit
-  thank-you.html   Confirmation page after a successful submission
+  index.html          Updated homepage with Blog navigation and teaser
+  styles.css          Existing styles plus Blog and article styles
+  store.html          Existing shop with Blog navigation
+  contact.html        Existing working form with Blog navigation
+  thank-you.html      Existing thank-you page + Blog navigation (noindex)
+  blog/index.html     Fully responsive journal with category filters and search
+  blog/*.html         SIX original long-form science explainers
+  blog/feed.xml       RSS feed for subscribers
+  sitemap.xml         Complete sitemap (including the six articles)
+  robots.txt          Points search engines to sitemap.xml
+  BLOG_GUIDE.md       How to publish and maintain new articles
 
-HOW TO INSTALL
-1. Open https://github.com/Warren1992/path-to-venus
-2. Select the MAIN branch and open the repository's root directory (not public/ or src/).
-3. Choose Add file > Upload files (on mobile, requesting Desktop site may help).
-4. Upload ALL FIVE files, replacing the existing index.html and styles.css.
-5. Commit the changes to main. Keep existing folders and other files unchanged.
-6. When GitHub Pages finishes publishing, refresh https://pathtovenus.com/.
-7. Open https://pathtovenus.com/store.html and https://pathtovenus.com/contact.html.
+PUBLISHING — GITHUB PAGES
+1. Open https://github.com/Warren1992/path-to-venus (main branch).
+2. On desktop: upload the contents of this ZIP into the repository ROOT.
+   IMPORTANT: Keep the blog/ folder and its files together. Do not upload the
+   ZIP itself or put all the blog files at the root.
+3. Overwrite the existing 5 HTML/CSS files, keeping public/, src/ and
+   nimbivale.html unchanged. Add the new blog/ directory, sitemap.xml,
+   robots.txt and BLOG_GUIDE.md. Commit changes to main.
+4. After the Pages deployment finishes, check:
+     https://pathtovenus.com/blog/
+     https://pathtovenus.com/blog/could-humans-live-in-venus-clouds.html
+     https://pathtovenus.com/sitemap.xml
+     https://pathtovenus.com/store.html
+     https://pathtovenus.com/contact.html
+5. In Google Search Console, verify the site and submit sitemap.xml.
+   Google indexing and search traffic are NOT guaranteed.
 
-CONTACT FORM — IMPORTANT ACTIVATION
-- The contact form is configured for your previously designated PUBLIC business address:
-  contact@pathtovenus.com
-- It uses https://formsubmit.co/ to deliver form submissions. This service requires
-  the recipient email address to be verified. Send a TEST inquiry from the deployed
-  contact page and open the FormSubmit activation email forwarded to your inbox.
-  Click its activation link; then send a second test message and confirm receipt.
-- Until verified, do not assume submissions are being delivered.
-- If you change your public contact inbox, update the form action and contact links
-  in contact.html and re-verify with FormSubmit.
-- Email forwarding for contact@pathtovenus.com needs to be functioning.
-- Never paste personal credit-card details or account secrets into this form.
+ARTICLE DESIGN
+- No frameworks, plugins, databases or server needed for the blog.
+- Existing images in public/assets are used, clearly described as concept art.
+- Each article has unique meta title, description, canonical, Open Graph tags,
+  BlogPosting structured data, a publication date, source links and more reading.
+- Category buttons and keyword search work in the browser; all article links
+  remain visible even if JavaScript is off.
+- No payment or contact processing changes: Store stays at Printify; the
+  Contact form still requires FormSubmit email verification to receive messages.
 
-STORE
-- Store and merchandise links point to your existing Printify storefront:
-  https://path-to-venus.printify.me/
-- Checkout, payments, shipping, product variants and pricing remain on Printify.
-- No product prices or photos were fabricated; the shop controls what is in stock.
-
-NO CHANGES to Nimbivale, your book link, original content, or other site assets.
+IMPORTANT
+Because this is a static GitHub Pages website, you still publish new
+articles by adding/editing website files and committing them. See BLOG_GUIDE.md.
