@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Official Store | Path to Venus</title>
-  <meta name="description" content="Shop Path to Venus T-shirts and explore official merchandise." />
-  <link rel="icon" type="image/png" href="public/assets/venus-icon.png" />
-
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Official Store | T-Shirts, Mugs &amp; Merch | Path to Venus</title>
+<meta name="description" content="Browse Path to Venus T-shirts, mugs, apparel and space-inspired merchandise. Explore the collection and support the journey to Venus." />
 <link rel="canonical" href="https://pathtovenus.com/store.html" />
-  <link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="public/assets/venus-icon.png" />
+<link rel="manifest" href="manifest.webmanifest" />
+<link rel="apple-touch-icon" href="assets/app-icon-192.png" />
+<meta name="theme-color" content="#080808" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<link rel="stylesheet" href="styles.css" />
+<script src="assets/install-app.js" defer></script>
+<script src="merchant/shopify-config.js" defer></script>
+<script src="assets/storefront.js" defer></script>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html#home" aria-label="Path to Venus home">
-      <span class="planet-logo" aria-hidden="true"></span>
-      <span>PATH TO <strong>VENUS</strong></span>
-    </a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="index.html#home">Home</a>
-      <a href="index.html#mission">Mission</a>
-      <a href="index.html#concepts">Concepts</a>
-      <a href="index.html#videos">Videos</a>
-      <a href="index.html#book">Book</a>
-      <a href="blog/">Blog</a><a href="store.html" class="active" aria-current="page">Store</a>
-      <a href="nimbivale.html">Game</a>
-      <a href="index.html#about">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <a class="header-button" href="index.html#join">Join the Journey</a>
-  </header>
-
-  <main>
-    <section class="interior-hero" aria-labelledby="store-heading">
-      <div class="interior-hero-content">
-        <p class="eyebrow-small">OFFICIAL PATH TO VENUS MERCHANDISE</p>
-        <h1 id="store-heading">WEAR THE MISSION</h1>
-        <p>Show your support for exploring Venus and humanity’s future among the clouds.</p>
+<header class="site-header">
+  <a class="brand" href="index.html#home" aria-label="Path to Venus home"><span class="planet-logo" aria-hidden="true"></span><span>PATH TO <strong>VENUS</strong></span></a>
+  <nav class="nav" aria-label="Primary navigation">
+    <a href="index.html#home">Home</a><a href="index.html#mission">Mission</a><a href="index.html#concepts">Concepts</a><a href="index.html#videos">Videos</a><a href="index.html#book">Book</a><a href="blog/">Blog</a><a href="store.html" class="active" aria-current="page">Store</a><a href="index.html#about">About</a><a href="contact.html">Contact</a>
+  </nav>
+  <a class="header-button" href="index.html#join">Join the Journey</a>
+</header>
+<main>
+  <section class="interior-hero shop-hero" aria-labelledby="store-heading">
+    <div class="interior-hero-content">
+      <p class="eyebrow-small">OFFICIAL PATH TO VENUS MERCHANDISE</p>
+      <h1 id="store-heading">WEAR THE MISSION</h1>
+      <p>T-shirts, mugs, gifts, and essentials inspired by humanity's next great destination.</p>
+      <a href="#collection" class="shop-primary-cta">Explore Merchandise <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+  <section class="shop-story" aria-label="Why shop Path to Venus">
+    <div><span aria-hidden="true">✦</span><strong>Made for explorers</strong><small>Celebrate the mission</small></div>
+    <div><span aria-hidden="true">◉</span><strong>Support Path to Venus</strong><small>Help share the vision</small></div>
+    <div><span aria-hidden="true">⌁</span><strong>Made to order</strong><small>See fulfillment details at checkout</small></div>
+  </section>
+  <section class="interior-section shop-showcase" aria-labelledby="categories-heading">
+    <div class="shop-section-heading"><p class="eyebrow-small">PICK YOUR FAVORITES</p><h2 id="categories-heading">EXPLORE MERCHANDISE</h2><p>Browse our current designs. Product availability and prices are provided by the connected storefront.</p></div>
+    <div class="shop-category-grid" aria-label="Merchandise categories">
+      <a href="#collection" class="shop-category" data-category-link="apparel"><div class="shop-category-visual tee" aria-hidden="true">✦</div><h3>T-Shirts &amp; Apparel</h3><p>Wear the wonder.</p><span>Explore apparel →</span></a>
+      <a href="#collection" class="shop-category" data-category-link="drinkware"><div class="shop-category-visual mug" aria-hidden="true">◉</div><h3>Mugs &amp; Drinkware</h3><p>Fuel the next mission.</p><span>Explore drinkware →</span></a>
+      <a href="#collection" class="shop-category" data-category-link="gifts"><div class="shop-category-visual gifts" aria-hidden="true">✧</div><h3>Gifts &amp; More</h3><p>Bring Venus along.</p><span>Explore more →</span></a>
+    </div>
+  </section>
+  <section id="collection" class="interior-section shop-collection" aria-labelledby="collection-heading">
+    <div class="shop-section-heading">
+      <p class="eyebrow-small">THE COLLECTION</p>
+      <h2 id="collection-heading">SHOP PATH TO VENUS</h2>
+      <p>Choose a product, select a size or style, then add it to your cart when the on-site store is connected.</p>
+    </div>
+    <div id="shop-toolbar" class="shop-toolbar" hidden>
+      <div class="shop-filter-buttons" aria-label="Filter merchandise">
+        <button type="button" data-filter="all" aria-pressed="true" class="selected">All products</button>
+        <button type="button" data-filter="apparel" aria-pressed="false">Apparel</button>
+        <button type="button" data-filter="drinkware" aria-pressed="false">Mugs &amp; drinkware</button>
+        <button type="button" data-filter="gifts" aria-pressed="false">Gifts &amp; more</button>
       </div>
-    </section>
-
-    <section class="interior-section" aria-labelledby="merch-heading">
-      <h2 id="merch-heading">EXPLORE THE STORE</h2>
-      <p class="interior-intro">Discover Path to Venus apparel and more in our official merchandise shop. Choose your favorites and complete your purchase through our storefront.</p>
-      <div class="store-grid">
-        <article class="store-card">
-          <div class="store-card-art" aria-hidden="true">
-            <div class="store-art-symbol">✦</div>
-            <span class="store-art-text">PATH TO VENUS</span>
-          </div>
-          <div class="store-card-body">
-            <h3>T-Shirts &amp; Apparel</h3>
-            <p>Take the Path to Venus vision with you. Explore shirts and wearable merchandise.</p>
-            <a class="store-btn" href="https://path-to-venus.printify.me/" target="_blank" rel="noopener noreferrer">Shop T-Shirts <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
-        <article class="store-card">
-          <div class="store-card-art" aria-hidden="true">
-            <div class="store-art-symbol">◈</div>
-            <span class="store-art-text">EXPLORE MORE</span>
-          </div>
-          <div class="store-card-body">
-            <h3>Other Merchandise</h3>
-            <p>Explore the full catalog and see the merchandise currently offered in the shop.</p>
-            <a class="store-btn" href="https://path-to-venus.printify.me/" target="_blank" rel="noopener noreferrer">Browse All Merch <span aria-hidden="true">↗</span></a>
-          </div>
-        </article>
+      <label class="shop-search">Search products <input id="shop-search" type="search" placeholder="Search the collection…" autocomplete="off" /></label>
+      <button id="open-cart" class="shop-cart-toggle" type="button">Bag <span id="shop-cart-count">0</span></button>
+    </div>
+    <p id="shop-live-message" class="shop-live" role="status" aria-live="polite"></p>
+    <div id="shop-products" class="shop-product-grid">
+      <div class="shop-setup" role="status">
+        <div class="shop-setup-mark" aria-hidden="true">✦</div>
+        <h3>Our on-site catalog is being prepared</h3>
+        <p>Our products are currently available through the existing Printify shop. The new integrated product catalog and cart will appear here after the Shopify connection is configured.</p>
+        <a class="store-btn" href="https://path-to-venus.printify.me/" target="_blank" rel="noopener noreferrer">Shop available merchandise <span aria-hidden="true">↗</span></a>
       </div>
-      <div class="store-note">
-        <strong>Checkout &amp; availability:</strong> Product options, current pricing, shipping details, and checkout are shown in the Printify storefront. This page does not take payments or collect card details.
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© 2026 Path to Venus. Building the vision for humanity’s future in the clouds.</p>
-  </footer>
+    </div>
+    <button id="load-more-products" type="button" class="shop-outline-btn" hidden>Load more products</button>
+    <div class="store-note shop-disclosure"><strong>Shopping &amp; payment:</strong> Until the integrated store is activated, purchases take place on our Printify storefront. When connected, products and the shopping bag will appear here, and payment will be processed securely by Shopify checkout. This website does not collect payment card information.</div>
+  </section>
+  <aside id="shop-cart" class="shop-cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <div class="shop-cart-scrim" data-close-cart></div>
+    <div class="shop-cart-content">
+      <div class="shop-cart-top"><h2 id="cart-title">Your Bag</h2><button type="button" id="close-cart" aria-label="Close shopping bag">×</button></div>
+      <div id="cart-items" class="shop-cart-items"><p>Your bag is empty.</p></div>
+      <div class="shop-cart-bottom"><div class="shop-cart-subtotal"><strong>Estimated subtotal</strong><strong id="cart-subtotal">$0.00</strong></div><p>Shipping, discounts and taxes are calculated at checkout.</p><button id="shop-checkout" type="button" class="store-btn shop-checkout" disabled>Secure checkout →</button></div>
+    </div>
+  </aside>
+</main>
+<footer class="footer"><p>© 2026 Path to Venus. Building the vision for humanity's future in the clouds.</p></footer>
 </body>
 </html>

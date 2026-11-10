@@ -1,0 +1,38 @@
+{
+  "id": "https://pathtovenus.com/",
+  "name": "Path to Venus",
+  "short_name": "Venus",
+  "description": "Explore Venus science, missions, future habitats, and Path to Venus merchandise.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "lang": "en-US",
+  "icons": [
+    {
+      "src": "/assets/app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Venus Journal",
+      "short_name": "Journal",
+      "url": "/blog/"
+    },
+    {
+      "name": "Store",
+      "short_name": "Store",
+      "url": "/store.html"
+    }
+  ]
+}
