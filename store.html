@@ -14,8 +14,30 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 <link rel="stylesheet" href="styles.css" />
 <script src="assets/install-app.js" defer></script>
-<script src="merchant/shopify-config.js" defer></script>
-<script src="assets/storefront.js" defer></script>
+<script src="merchant/fourthwall-config.js" defer></script>
+<script src="assets/fourthwall-store.js" defer></script>
+<style>
+/* Fourthwall merchandise polish layered over existing Path to Venus theme. */
+.shop-product {display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.shop-product-photo {aspect-ratio: 4/4.5;display:grid;place-items:center;overflow:hidden;background:linear-gradient(135deg,#27211c,#100d0b);}
+.shop-product-photo img {display:block;width:100%;height:100%;object-fit:cover;transition:transform .25s ease}
+.shop-product:hover .shop-product-photo img{transform:scale(1.025)}
+.shop-product-body{display:flex;flex-direction:column;flex:1;gap:11px}
+.shop-product-body h3{line-height:1.28;margin:0;font-size:clamp(1.1rem,2vw,1.45rem)}
+.shop-product-description{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:3;overflow:hidden;line-height:1.5}
+.shop-product-select{display:block;width:100%;max-width:100%;background:#19130f;border:1px solid #70472b;color:#f9e6d0;border-radius:10px;padding:12px;font:inherit}
+.shop-product-price{font-size:1.25rem;font-weight:750;color:#ffb155;margin-top:auto}
+.shop-add{margin-top:10px;min-height:46px}
+.shop-add[disabled]{opacity:.5;cursor:not-allowed}
+.shop-quick-link{display:inline-block;color:#e5a26e;margin-top:4px;font-weight:650;text-decoration:underline;text-underline-offset:3px}
+.shop-loading{padding:42px 16px;text-align:center;color:#d8bda4}
+.shop-cart-item{display:flex;flex-direction:column;gap:8px;padding:18px 0;border-bottom:1px solid rgba(219,146,87,.24)}
+.shop-cart-controls{display:flex;gap:12px;align-items:center}
+.shop-cart-controls button{border:1px solid #935028;border-radius:8px;color:#fce4cd;background:#21150f;min-width:38px;min-height:38px;font-size:1.15rem}
+.shop-cart-content{color:#f6e8dc}
+.shop-checkout[disabled]{opacity:.6}
+@media(max-width:600px){.shop-product-photo{aspect-ratio: 1/1.05}.shop-product-body{padding:18px}}
+</style>
 </head>
 <body>
 <header class="site-header">
@@ -51,7 +73,7 @@
     <div class="shop-section-heading">
       <p class="eyebrow-small">THE COLLECTION</p>
       <h2 id="collection-heading">SHOP PATH TO VENUS</h2>
-      <p>Choose a product, select a size or style, then add it to your cart when the on-site store is connected.</p>
+      <p>Shop official Path to Venus designs. Choose your size or color, add to your bag, and check out securely through Fourthwall.</p>
     </div>
     <div id="shop-toolbar" class="shop-toolbar" hidden>
       <div class="shop-filter-buttons" aria-label="Filter merchandise">
@@ -67,13 +89,13 @@
     <div id="shop-products" class="shop-product-grid">
       <div class="shop-setup" role="status">
         <div class="shop-setup-mark" aria-hidden="true">✦</div>
-        <h3>Our on-site catalog is being prepared</h3>
-        <p>Our products are currently available through the existing Printify shop. The new integrated product catalog and cart will appear here after the Shopify connection is configured.</p>
+        <h3>Our merchandise collection</h3>
+        <p>Browse our official collection. Product images, pricing and sizes will appear here when the Fourthwall Storefront API is connected. Until then, our existing Printify merchandise remains available.</p>
         <a class="store-btn" href="https://path-to-venus.printify.me/" target="_blank" rel="noopener noreferrer">Shop available merchandise <span aria-hidden="true">↗</span></a>
       </div>
     </div>
     <button id="load-more-products" type="button" class="shop-outline-btn" hidden>Load more products</button>
-    <div class="store-note shop-disclosure"><strong>Shopping &amp; payment:</strong> Until the integrated store is activated, purchases take place on our Printify storefront. When connected, products and the shopping bag will appear here, and payment will be processed securely by Shopify checkout. This website does not collect payment card information.</div>
+    <div class="store-note shop-disclosure"><strong>Shopping &amp; payment:</strong> All on-site products, prices and availability come directly from our Fourthwall shop once connected. Checkout, payments, shipping and taxes are handled securely by Fourthwall. This website does not collect payment card information. The Printify link remains available during setup.</div>
   </section>
   <aside id="shop-cart" class="shop-cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
     <div class="shop-cart-scrim" data-close-cart></div>
