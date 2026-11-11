@@ -5,7 +5,7 @@
  * Copy the shop's hostname (for example my-shop.fourthwall.com) from your Fourthwall dashboard.
  */
 window.PTV_FOURTHWALL = {
-  shopDomain: '',              // e.g. 'path-to-venus-shop.fourthwall.com'
-  storefrontToken: '',         // ptkn_...; public Storefront API token only
+  shopDomain: 'path-to-venus-shop.fourthwall.com',              // e.g. 'path-to-venus-shop.fourthwall.com'
+  storefrontToken: 'ptkn_0dd55652-aa0e-4fee-a255-6c7ad66d88b9',         // ptkn_...; public Storefront API token only
   currency: 'USD'
 };
