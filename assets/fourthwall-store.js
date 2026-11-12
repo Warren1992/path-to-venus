@@ -35,9 +35,16 @@
     return response.json();
   }
   function categoryOf(p) {
-    const s=(p.name+' '+(p.description||'')).toLowerCase();
-    if(/mug|cup|drink|tumbler|bottle|glass/.test(s))return 'drinkware';
-    if(/shirt|tee\b|hoodie|sweat|apparel|wear|hat|cap|beanie|sock/.test(s))return 'apparel';
+    // Product names are reliable for merchandising; descriptions often mention other categories.
+    const name=String(p.name||'').toLowerCase();
+    const description=String(p.description||'').toLowerCase().replace(/<[^>]*>/g,' ');
+    const apparel=/t[ -]?shirt|tee\b|hoodie|sweatshirt|sweatpants|apparel|hat|cap|beanie|sock|tank top|jacket/;
+    const drinkware=/mug|coffee cup|drinkware|tumbler|water bottle|glassware/;
+    if(apparel.test(name))return 'apparel';
+    if(drinkware.test(name))return 'drinkware';
+    // Only fall back to copy for generically named products.
+    if(apparel.test(description) && !drinkware.test(description))return 'apparel';
+    if(drinkware.test(description) && !apparel.test(description))return 'drinkware';
     return 'gifts';
   }
   function available(variant,p) {
@@ -86,8 +93,11 @@
     body.append(el('h3','',p.name || 'Official merchandise'));
     if(p.description){const d=document.createElement('p');d.className='shop-product-description';
       // Fourthwall product descriptions can contain markup; display as plain text to avoid XSS.
-      const stripped=String(p.description).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
-      d.textContent=stripped.slice(0,210);body.append(d);
+      let stripped=String(p.description).replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+      // Fourthwall may repeat the product title at the beginning of its description.
+      const name=String(p.name||'').trim();
+      if(name && stripped.toLowerCase().startsWith(name.toLowerCase()))stripped=stripped.slice(name.length).trim();
+      d.textContent=stripped.slice(0,210);if(stripped)body.append(d);
     }
     const variants=p.variants||[];
     let selected=variants.find(v=>available(v,p))||variants[0];
@@ -157,15 +167,23 @@
   $('close-cart').addEventListener('click',()=>setBagOpen(false));
   bagPanel.querySelector('[data-close-cart]').addEventListener('click',()=>setBagOpen(false));
   window.addEventListener('keydown',e=>{if(e.key==='Escape'&&!bagPanel.hidden)setBagOpen(false)});
-  checkout.addEventListener('click',async()=>{
+  checkout.addEventListener('click',()=>{
     if(!bag.size || busy)return;
     checkout.disabled=true;checkout.textContent='Opening secure checkout…';
     try {
-      const data=await api('carts',{method:'POST',body:JSON.stringify({currency})});
-      if(!data.id || !/^[0-9a-f-]{36}$/i.test(data.id))throw new Error('Could not create the shopping cart.');
-      await api('carts/'+encodeURIComponent(data.id)+'/add',{method:'POST',body:JSON.stringify({items:[...bag.values()].map(x=>({variantId:x.v.id,quantity:x.qty}))})});
-      const url=new URL('https://'+domain+'/checkout/');
-      url.search=new URLSearchParams({cartCurrency:currency,cartId:data.id});
+      // Fourthwall documents this direct checkout route for existing product variants.
+      // It avoids the previous /v1/carts POST, which returned HTTP 400 for shoppers.
+      const items=[...bag.values()].map(({v,qty})=>{
+        const id=String(v.id||'');
+        if(!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id))
+          throw new Error('This item has an invalid variation. Please select it again.');
+        if(!Number.isInteger(qty) || qty<1 || qty>50)
+          throw new Error('This item has an invalid quantity.');
+        return id+':'+qty;
+      });
+      const url=new URL('https://'+domain+'/cart/checkout');
+      url.searchParams.set('products',items.join(','));
+      url.searchParams.set('currency',currency);
       window.location.assign(url.href);
     }catch(e){show('Checkout could not start: '+e.message);setBagOpen(false)}
     finally{checkout.disabled=!bag.size;checkout.textContent='Secure checkout →'}
