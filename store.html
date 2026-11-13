@@ -37,9 +37,35 @@
 .shop-cart-content{color:#f6e8dc}
 .shop-checkout[disabled]{opacity:.6}
 @media(max-width:600px){.shop-product-photo{aspect-ratio: 1/1.05}.shop-product-body{padding:18px}}
+
+/* Store-first layout: merchandise before marketing. */
+.ptv-store-first .shop-collection{width:100%;box-sizing:border-box;padding-top:22px;border-top:0}
+.ptv-store-first .shop-collection .shop-section-heading{margin-bottom:12px}
+.ptv-store-first .shop-collection .shop-section-heading h2{margin:4px 0 8px}
+.ptv-store-first .shop-collection .shop-toolbar{margin:12px 0 16px}
+.ptv-store-first .shop-hero{margin-top:32px}
+@media(max-width:1050px){
+ .ptv-store-first .site-header{padding:10px 14px 8px;gap:10px}
+ .ptv-store-first .brand{font-size:.9rem;letter-spacing:2px}
+ .ptv-store-first .brand .planet-logo{width:54px;height:54px;flex:0 0 54px}
+ .ptv-store-first .header-button{display:none}
+ .ptv-store-first .nav{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:thin;white-space:nowrap;gap:18px}
+ .ptv-store-first .nav a{flex:0 0 auto;padding:10px 0}
+ .ptv-store-first .nav a.active{order:-1}
+}
+@media(max-width:620px){
+ .ptv-store-first .shop-collection{padding:15px 18px 42px}
+ .ptv-store-first .shop-collection .shop-section-heading{margin-bottom:8px}
+ .ptv-store-first .shop-collection .shop-section-heading>p:last-child{display:none}
+ .ptv-store-first .shop-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:end}
+ .ptv-store-first .shop-filter-buttons{grid-column:1/-1;flex-wrap:nowrap;overflow-x:auto;max-width:100%;padding-bottom:3px}
+ .ptv-store-first .shop-filter-buttons button{flex:0 0 auto;white-space:nowrap}
+ .ptv-store-first .shop-search{grid-column:1;width:100%;min-width:0}
+ .ptv-store-first .shop-cart-toggle{grid-column:2;width:auto;min-width:78px;padding-left:14px;padding-right:14px}
+}
 </style>
 </head>
-<body>
+<body class="ptv-store-first">
 <header class="site-header">
   <a class="brand" href="index.html#home" aria-label="Path to Venus home"><span class="planet-logo" aria-hidden="true"></span><span>PATH TO <strong>VENUS</strong></span></a>
   <nav class="nav" aria-label="Primary navigation">
@@ -48,27 +74,6 @@
   <a class="header-button" href="index.html#join">Join the Journey</a>
 </header>
 <main>
-  <section class="interior-hero shop-hero" aria-labelledby="store-heading">
-    <div class="interior-hero-content">
-      <p class="eyebrow-small">OFFICIAL PATH TO VENUS MERCHANDISE</p>
-      <h1 id="store-heading">WEAR THE MISSION</h1>
-      <p>T-shirts, mugs, gifts, and essentials inspired by humanity's next great destination.</p>
-      <a href="#collection" class="shop-primary-cta">Explore Merchandise <span aria-hidden="true">↓</span></a>
-    </div>
-  </section>
-  <section class="shop-story" aria-label="Why shop Path to Venus">
-    <div><span aria-hidden="true">✦</span><strong>Made for explorers</strong><small>Celebrate the mission</small></div>
-    <div><span aria-hidden="true">◉</span><strong>Support Path to Venus</strong><small>Help share the vision</small></div>
-    <div><span aria-hidden="true">⌁</span><strong>Made to order</strong><small>See fulfillment details at checkout</small></div>
-  </section>
-  <section class="interior-section shop-showcase" aria-labelledby="categories-heading">
-    <div class="shop-section-heading"><p class="eyebrow-small">PICK YOUR FAVORITES</p><h2 id="categories-heading">EXPLORE MERCHANDISE</h2><p>Browse our current designs. Product availability and prices are provided by the connected storefront.</p></div>
-    <div class="shop-category-grid" aria-label="Merchandise categories">
-      <a href="#collection" class="shop-category" data-category-link="apparel"><div class="shop-category-visual tee" aria-hidden="true">✦</div><h3>T-Shirts &amp; Apparel</h3><p>Wear the wonder.</p><span>Explore apparel →</span></a>
-      <a href="#collection" class="shop-category" data-category-link="drinkware"><div class="shop-category-visual mug" aria-hidden="true">◉</div><h3>Mugs &amp; Drinkware</h3><p>Fuel the next mission.</p><span>Explore drinkware →</span></a>
-      <a href="#collection" class="shop-category" data-category-link="gifts"><div class="shop-category-visual gifts" aria-hidden="true">✧</div><h3>Gifts &amp; More</h3><p>Bring Venus along.</p><span>Explore more →</span></a>
-    </div>
-  </section>
   <section id="collection" class="interior-section shop-collection" aria-labelledby="collection-heading">
     <div class="shop-section-heading">
       <p class="eyebrow-small">THE COLLECTION</p>
@@ -96,6 +101,27 @@
     </div>
     <button id="load-more-products" type="button" class="shop-outline-btn" hidden>Load more products</button>
     <div class="store-note shop-disclosure"><strong>Shopping &amp; payment:</strong> All on-site products, prices and availability come directly from our Fourthwall shop once connected. Checkout, payments, shipping and taxes are handled securely by Fourthwall. This website does not collect payment card information. The Printify link remains available during setup.</div>
+  </section>
+  <section class="interior-hero shop-hero" aria-labelledby="store-heading">
+    <div class="interior-hero-content">
+      <p class="eyebrow-small">OFFICIAL PATH TO VENUS MERCHANDISE</p>
+      <h1 id="store-heading">WEAR THE MISSION</h1>
+      <p>T-shirts, mugs, gifts, and essentials inspired by humanity's next great destination.</p>
+      <a href="#collection" class="shop-primary-cta">Explore Merchandise <span aria-hidden="true">↓</span></a>
+    </div>
+  </section>
+  <section class="shop-story" aria-label="Why shop Path to Venus">
+    <div><span aria-hidden="true">✦</span><strong>Made for explorers</strong><small>Celebrate the mission</small></div>
+    <div><span aria-hidden="true">◉</span><strong>Support Path to Venus</strong><small>Help share the vision</small></div>
+    <div><span aria-hidden="true">⌁</span><strong>Made to order</strong><small>See fulfillment details at checkout</small></div>
+  </section>
+  <section class="interior-section shop-showcase" aria-labelledby="categories-heading">
+    <div class="shop-section-heading"><p class="eyebrow-small">PICK YOUR FAVORITES</p><h2 id="categories-heading">EXPLORE MERCHANDISE</h2><p>Browse our current designs. Product availability and prices are provided by the connected storefront.</p></div>
+    <div class="shop-category-grid" aria-label="Merchandise categories">
+      <a href="#collection" class="shop-category" data-category-link="apparel"><div class="shop-category-visual tee" aria-hidden="true">✦</div><h3>T-Shirts &amp; Apparel</h3><p>Wear the wonder.</p><span>Explore apparel →</span></a>
+      <a href="#collection" class="shop-category" data-category-link="drinkware"><div class="shop-category-visual mug" aria-hidden="true">◉</div><h3>Mugs &amp; Drinkware</h3><p>Fuel the next mission.</p><span>Explore drinkware →</span></a>
+      <a href="#collection" class="shop-category" data-category-link="gifts"><div class="shop-category-visual gifts" aria-hidden="true">✧</div><h3>Gifts &amp; More</h3><p>Bring Venus along.</p><span>Explore more →</span></a>
+    </div>
   </section>
   <aside id="shop-cart" class="shop-cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
     <div class="shop-cart-scrim" data-close-cart></div>
