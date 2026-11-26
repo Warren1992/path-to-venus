@@ -3,7 +3,7 @@ const CACHE_VERSION = 'ptv-pwa-v1';
 const OFFLINE_URL = '/offline.html';
 const APP_SHELL = [
   '/', '/index.html', '/blog/', '/store.html', '/contact.html',
-  '/styles.css', '/assets/install-app.js', '/assets/storefront.js',
+  '/styles.css', '/assets/compact-header.css', '/assets/compact-header.js', '/assets/install-app.js', '/assets/storefront.js',
   '/merchant/shopify-config.js', '/manifest.webmanifest',
   '/assets/app-icon-192.png', '/assets/app-icon-512.png', OFFLINE_URL
 ];

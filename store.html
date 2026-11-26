@@ -44,14 +44,6 @@
 .ptv-store-first .shop-collection .shop-section-heading h2{margin:4px 0 8px}
 .ptv-store-first .shop-collection .shop-toolbar{margin:12px 0 16px}
 .ptv-store-first .shop-hero{margin-top:32px}
-@media(max-width:1050px){
- .ptv-store-first .site-header{padding:10px 14px 8px;gap:10px}
- .ptv-store-first .brand{font-size:.9rem;letter-spacing:2px}
- .ptv-store-first .brand .planet-logo{width:54px;height:54px;flex:0 0 54px}
- .ptv-store-first .header-button{display:none}
- .ptv-store-first .nav{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:thin;white-space:nowrap;gap:18px}
- .ptv-store-first .nav a{flex:0 0 auto;padding:10px 0}
-}
 @media(max-width:620px){
  .ptv-store-first .shop-collection{padding:15px 18px 42px}
  .ptv-store-first .shop-collection .shop-section-heading{margin-bottom:8px}
@@ -63,14 +55,32 @@
  .ptv-store-first .shop-cart-toggle{grid-column:2;width:auto;min-width:78px;padding-left:14px;padding-right:14px}
 }
 </style>
+<link rel="stylesheet" href="assets/compact-header.css" />
+<script src="assets/compact-header.js" defer></script>
 </head>
 <body class="ptv-store-first">
-<header class="site-header">
+<header class="site-header ptv-compact-header">
   <a class="brand" href="index.html#home" aria-label="Path to Venus home"><span class="planet-logo" aria-hidden="true"></span><span>PATH TO <strong>VENUS</strong></span></a>
-  <nav class="nav" aria-label="Primary navigation">
-    <a href="index.html#home">Home</a><a href="store.html" class="active" aria-current="page">Shop</a><a href="index.html#mission">Mission</a><a href="index.html#concepts">Concepts</a><a href="index.html#videos">Videos</a><a href="index.html#book">Book</a><a href="blog/">Blog</a><a href="index.html#about">About</a><a href="contact.html">Contact</a>
-  </nav>
-  <a class="header-button" href="index.html#join">Join the Journey</a>
+  <div class="ptv-header-actions">
+    <a class="header-button" href="https://a.co/d/02iaiqmu">Buy the Book</a>
+    <details class="ptv-menu">
+      <summary>
+        <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <span>Menu</span>
+      </summary>
+      <nav class="ptv-menu-links" aria-label="Primary navigation">
+        <a href="index.html#home">Home</a>
+        <a href="store.html" class="active" aria-current="page">Shop</a>
+        <a href="index.html#mission">Mission</a>
+        <a href="index.html#concepts">Concepts</a>
+        <a href="index.html#videos">Videos</a>
+        <a href="index.html#book">Book</a>
+        <a href="blog/">Blog</a>
+        <a href="index.html#about">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </details>
+  </div>
 </header>
 <main>
   <section id="collection" class="interior-section shop-collection" aria-labelledby="collection-heading">
