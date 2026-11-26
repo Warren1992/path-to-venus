@@ -1,0 +1,91 @@
+.site-header.ptv-compact-header {
+  flex-wrap: nowrap;
+  gap: 12px;
+}
+
+.ptv-compact-header .brand { min-width: 0; }
+.ptv-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.ptv-compact-header .header-button,
+.ptv-menu summary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-height: 44px;
+  padding: 0 15px;
+  border-radius: 8px;
+  white-space: nowrap;
+  font-size: .92rem;
+  font-weight: 700;
+}
+
+.ptv-menu summary {
+  list-style: none;
+  cursor: pointer;
+  border: 1px solid #775328;
+  color: #f5efe6;
+  background: #19130d;
+}
+.ptv-menu summary::-webkit-details-marker { display: none; }
+.ptv-menu[open] summary, .ptv-menu summary:hover { border-color: #ff9d17; }
+.ptv-menu summary:focus-visible { outline: 2px solid #ffb65d; outline-offset: 4px; }
+
+.ptv-menu-links {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 34px;
+  width: min(260px, calc(100vw - 24px));
+  max-height: min(27rem, calc(100dvh - 82px));
+  overflow: auto;
+  overscroll-behavior: contain;
+  padding: 6px;
+  border: 1px solid #775328;
+  border-radius: 12px;
+  background: #14100c;
+  box-shadow: 0 12px 32px #0009;
+}
+
+.ptv-menu-links a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 13px;
+  border-radius: 7px;
+}
+
+.ptv-menu-links a:hover, .ptv-menu-links a.active {
+  color: #ffc473;
+  background: #382510;
+}
+.ptv-menu-links a:focus-visible { outline-offset: -3px; }
+
+@media (max-width: 1050px) {
+  .site-header.ptv-compact-header { padding: 10px 14px; }
+  .ptv-menu-links { right: 14px; }
+}
+
+@media (max-width: 620px) {
+  .site-header.ptv-compact-header { gap: 8px; }
+  .ptv-compact-header .brand { gap: 8px; font-size: .8rem; letter-spacing: 1px; }
+  .ptv-compact-header .planet-logo { width: 40px; height: 40px; }
+  .ptv-header-actions { gap: 8px; }
+  .ptv-compact-header .header-button, .ptv-menu summary { padding: 0 10px; font-size: .82rem; }
+}
+
+@media (max-width: 365px) {
+  .ptv-menu summary span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+}
